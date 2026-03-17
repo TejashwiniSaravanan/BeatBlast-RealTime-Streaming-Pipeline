@@ -5,6 +5,9 @@
 **Date:** July 19, 2025  
 
 [👉 Click here to view the original PDF Report](./BeatBlast%20Analysis%20and%20report.pdf)
+
+[👉 View the Full Structured Streaming Script (PDF)](./Structured%20Streaming%20script.pdf)
+
 ---
 
 ## 1. Project Objective
@@ -47,3 +50,32 @@ Structured Streaming was preferred over the older DStream API because it offers:
              ├── country=GB/
              ├── country=IN/
              └── country=US/
+
+```
+
+## 🛠️ Implementation Details
+
+### Schema Definition
+To ensure data integrity, a strict schema was applied to the incoming JSON stream:
+
+```python
+from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+
+event_schema = StructType([
+    StructField("eventType", StringType(), True),
+    StructField("eventTimestamp", StringType(), True),
+    StructField("songId", StringType(), True),
+    StructField("userId", StringType(), True),
+    StructField("sessionId", StringType(), True),
+    StructField("platform", StringType(), True),
+    StructField("country", StringType(), True)
+])
+
+```
+
+popular_songs = (
+    song_plays_df
+    .withWatermark("eventTimestamp", "10 minutes")
+    .groupBy(window("eventTimestamp", "5 minutes"), "songId")
+    .count()
+)
