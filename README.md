@@ -17,7 +17,12 @@ The goal was to build a system capable of processing near real-time user interac
 * **Storage Architecture:** Partitioned Data Lake
 * **Environment:** Google Colab / Spark Cluster
 
+**[👉 View the Full Technical Report here](./REPORT.md)**
+
 ---
+
+
+
 
 ## 🏗️ Data Pipeline Architecture
 
