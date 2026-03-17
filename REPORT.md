@@ -4,6 +4,7 @@
 **Course:** ISM6362 Big Data and Cloud-Based Tools  
 **Date:** July 19, 2025  
 
+[👉 Click here to view the original PDF Report](./BeatBlast%20analysis%20and%20report.pdf)
 ---
 
 ## 1. Project Objective
