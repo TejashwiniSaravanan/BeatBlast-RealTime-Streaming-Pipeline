@@ -19,6 +19,8 @@ The goal was to build a system capable of processing near real-time user interac
 
 **[👉 View the Full Technical Report here](./REPORT.md)**
 
+**[👉 View the Full Structured Streaming Script (PDF)](./Structured%20Streaming%20script.pdf)**
+
 ---
 
 
@@ -97,6 +99,18 @@ To facilitate high-performance analytics, the `songPlay` event stream is written
              ├── country=IN/
              └── country=US/
 ```
+
+## 📂 Project Resources
+
+To explore the technical depth of this project, please refer to the following resources:
+
+* **Main Implementation:** [BeatBlast Streaming Pipeline (Notebook)](./BeatBlast_Streaming_Pipeline.ipynb)
+* **Data Generation:** [Event Simulator Script (Python)](./simulator.py)
+* **Technical Deep-Dive:** [Project Analysis & Report (Markdown)](./REPORT.md)
+* **Original Documentation:** [Academic Report (PDF)](./BeatBlast%20Analysis%20and%20report.pdf)
+* **Core Script Reference:** [Structured Streaming Logic (PDF)](./Structured%20Streaming%20script.pdf)
+* **Environment Setup:** [Requirements File](./requirements.txt)
+  
 
 ## 👤 Author
 Tejashwini Saravanan [LinkedIn](https://www.linkedin.com/in/tejashwinisaravanan/)
