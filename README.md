@@ -43,7 +43,23 @@ The PySpark application reads the JSON stream from the landing zone with a stric
 * **Active Sessions:** Employs a **10-minute sliding window** (sliding every 5 minutes) to count distinct active sessions by platform.
 
 ---
+## 💻 Core Streaming Logic
+The pipeline utilizes Spark's `readStream` to ingest JSON events and `writeStream` to persist data in a partitioned Parquet format.
 
+```python
+# Core logic from the Structured Streaming script
+query = (
+    processed_df
+    .writeStream
+    .format("parquet")
+    .option("path", "/content/beatblast_datalake/song_plays")
+    .option("checkpointLocation", "/content/checkpoints/song_plays")
+    .partitionBy("year", "month", "day", "country")
+    .outputMode("append")
+    .start()
+)
+
+``` 
 ## 📂 Data Lake Design & Partitioning
 To facilitate high-performance analytics, the `songPlay` event stream is written to a simulated Data Lake in **Parquet** format.
 
